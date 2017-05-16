@@ -31,9 +31,9 @@ class MediaFormatValidator {
         String mime = format.getString(MediaFormat.KEY_MIME);
         // Refer: http://developer.android.com/guide/appendix/media-formats.html#core
         // Refer: http://en.wikipedia.org/wiki/MPEG-4_Part_14#Data_streams
-        if (!MediaFormatExtraConstants.MIMETYPE_VIDEO_AVC.equals(mime)) {
-            throw new InvalidOutputFormatException("Video codecs other than AVC is not supported, actual mime type: " + mime);
-        }
+//        if (!MediaFormatExtraConstants.MIMETYPE_VIDEO_AVC.equals(mime)) {
+//            throw new InvalidOutputFormatException("Video codecs other than AVC is not supported, actual mime type: " + mime);
+//        }
         ByteBuffer spsBuffer = AvcCsdUtils.getSpsBuffer(format);
         byte profileIdc = AvcSpsUtils.getProfileIdc(spsBuffer);
         if (profileIdc != PROFILE_IDC_BASELINE) {
